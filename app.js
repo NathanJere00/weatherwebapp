@@ -8,7 +8,6 @@ window.addEventListener('load', ()=> {
     let iconImage = document.querySelector(".icon");
     let Town = document.querySelector(".town");
     let Country = document.querySelector(".country");
-    let Update = document.querySelector(".update");
     
   //  let temperatureDegree = document.querySelector(".temperature-degree");
 
@@ -24,10 +23,10 @@ window.addEventListener('load', ()=> {
                 })
                 .then( data =>{
                     console.log(data);
-                    const {temp_c, last_updated} = data.current;
+                    const {temp_c} = data.current;
                     
                     temperatureDegree.textContent = temp_c;
-                    Update.textContent = last_updated;
+                    
                     const { name, country} = data.location;
                     Town.textContent = name , country;
                     Country.textContent = country;
